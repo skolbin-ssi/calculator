@@ -514,7 +514,7 @@
     <comment>The text that shows in the dropdown navigation control in snapped mode when scientific calculator mode is selected.</comment>
   </data>
   <data name="ProgrammerModeText" xml:space="preserve">
-    <value>Programátorská</value>
+    <value>Programátor</value>
     <comment>The text that shows in the dropdown navigation control in snapped mode when programmer calculator mode is selected.</comment>
   </data>
   <data name="ConverterModeText" xml:space="preserve">
@@ -626,7 +626,7 @@
     <comment>Screen reader prompt for the Calculator Memory Recall button</comment>
   </data>
   <data name="MemRecall.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Vyvolať z pamäte (Ctrl+R)</value>
+    <value>Vyvolať z pamäte (Ctrl+R)</value>
     <comment>This is the tool tip automation name for the Memory Recall (MR) button.</comment>
   </data>
   <data name="MemPlus.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -638,11 +638,11 @@
     <comment>This is the tool tip automation name for the Memory Add (M+) button.</comment>
   </data>
   <data name="MemMinus.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Odčítať z pamäte</value>
+    <value>Odčítať z pamäte</value>
     <comment>Screen reader prompt for the Calculator Memory Subtract button</comment>
   </data>
   <data name="MemMinus.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Odčítať z pamäte (Ctrl+Q)</value>
+    <value>Odčítať z pamäte (Ctrl+Q)</value>
     <comment>This is the tool tip automation name for the Memory Subtract (M-) button.</comment>
   </data>
   <data name="ClearMemoryItemButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -650,11 +650,11 @@
     <comment>Screen reader prompt for the Calculator Clear Memory button</comment>
   </data>
   <data name="ClearMemoryItemButton.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Vymaže položku pamäte</value>
+    <value>Vymazať položku pamäte</value>
     <comment>This is the tool tip automation name for the Clear Memory Item (MC) button in the Memory list.</comment>
   </data>
   <data name="MemPlusItem.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Pridať do položky pamäte</value>
+    <value>Pridá do položky pamäte</value>
     <comment>Screen reader prompt for the Calculator Memory Add button in the Memory list</comment>
   </data>
   <data name="MemPlusItem.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
@@ -662,11 +662,11 @@
     <comment>This is the tool tip automation name for the Calculator Memory Add button in the Memory list</comment>
   </data>
   <data name="MemMinusItem.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Odčítať z položky pamäte</value>
+    <value>Odčítať z položky pamäte</value>
     <comment>Screen reader prompt for the Calculator Memory Subtract button in the Memory list</comment>
   </data>
   <data name="MemMinusItem.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Odčíta z položky pamäte</value>
+    <value>Odčítať z položky pamäte</value>
     <comment>This is the tool tip automation name for the Calculator Memory Subtract button in the Memory list</comment>
   </data>
   <data name="ClearMemorySwipeItem.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -678,11 +678,11 @@
     <comment>Text string for the Calculator Clear Memory option in the Memory list context menu</comment>
   </data>
   <data name="MemPlusSwipeItem.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Pridať do položky pamäte</value>
+    <value>Pridá do položky pamäte</value>
     <comment>Screen reader prompt for the Calculator Memory Add swipe button in the Memory list</comment>
   </data>
   <data name="MemPlusMenuItem.Text" xml:space="preserve">
-    <value>Pridať do položky pamäte</value>
+    <value>Pridá do položky pamäte</value>
     <comment>Text string for the Calculator Memory Add option in the Memory list context menu</comment>
   </data>
   <data name="MemMinusSwipeItem.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -2317,6 +2317,10 @@
     <value>© %1 Microsoft. Všetky práva vyhradené.</value>
     <comment>{Locked="%1"}. Copyright statement, displayed on the About panel. %1 = the current year (4 digits)</comment>
   </data>
+  <data name="AboutFlyoutContribute" xml:space="preserve">
+    <value>Ak chcete zistiť, ako môžete prispievať do programu Windows kalkulačka, vezmite projekt na %HL%GitHub%HL%.</value>
+    <comment>{Locked="%HL%GitHub%HL%"}. GitHub link, Displayed on the About panel</comment>
+  </data>
   <data name="AboutButton.Content" xml:space="preserve">
     <value>Informácie</value>
     <comment>The text that shows in the dropdown navigation control to open About panel</comment>
@@ -2728,7 +2732,7 @@
     <comment>AccessKey for the energy converter navbar item. {StringCategory="Accelerator"}</comment>
   </data>
   <data name="CategoryName_LengthAccessKey" xml:space="preserve">
-    <value>L</value>
+    <value>l</value>
     <comment>AccessKey for the length converter navbar item. {StringCategory="Accelerator"}</comment>
   </data>
   <data name="CategoryName_PowerAccessKey" xml:space="preserve">
@@ -3012,7 +3016,7 @@
     <comment>Name for the square function. Used by screen readers.</comment>
   </data>
   <data name="YRoot" xml:space="preserve">
-    <value>y-tá odmocnina</value>
+    <value>odmocnina y</value>
     <comment>Name for the y root function. Used by screen readers.</comment>
   </data>
   <data name="NavCategoryItem_AutomationNameFormat" xml:space="preserve">
@@ -3248,7 +3252,7 @@
     <comment>Used to describe the last bit of a binary number. Used in bit flip</comment>
   </data>
   <data name="GraphingCalculatorModeText" xml:space="preserve">
-    <value>Vytváranie grafov</value>
+    <value>Grafická kalkulačka</value>
     <comment>Name of the Graphing mode of the Calculator app. Displayed in the navigation menu.</comment>
   </data>
   <data name="plotButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -3451,6 +3455,10 @@
     <value>Analýza nie je pre túto funkciu podporovaná.</value>
     <comment>Error displayed when graph analysis is not supported or had an error.</comment>
   </data>
+  <data name="KGFVariableIsNotX" xml:space="preserve">
+    <value>Analýza je podporovaná iba pre funkcie vo formáte f(x). Príklad: y=x</value>
+    <comment>Error displayed when graph analysis detects the function format is not f(x).</comment>
+  </data>
   <data name="Maxima" xml:space="preserve">
     <value>Maxima</value>
     <comment>Title for KeyGraphFeatures Maxima Property</comment>
@@ -3472,8 +3480,8 @@
     <comment>Title for KeyGraphFeatures Parity Property</comment>
   </data>
   <data name="Periodicity" xml:space="preserve">
-    <value>Perióda</value>
-    <comment>Title for KeyGraphFeatures Periodicity Property</comment>
+    <value>Cyklus</value>
+    <comment>Title for KeyGraphFeatures Periodicity Property. The period of a mathematical function is the smallest interval in its input values such that its output values repeat every such interval.</comment>
   </data>
   <data name="Range" xml:space="preserve">
     <value>Rozsah</value>
@@ -3547,7 +3555,7 @@
     <comment>Error that occurs during graphing when the equation is out of domain.</comment>
   </data>
   <data name="GE_NotSupported" xml:space="preserve">
-    <value>Znázornenie tejto rovnice nie je podporované</value>
+    <value>Znázornenie tejto rovnice v grafe nie je podporované</value>
     <comment>Error that occurs during graphing when the equation is not supported.</comment>
   </data>
   <data name="ParenthesisMismatch" xml:space="preserve">
@@ -4085,5 +4093,41 @@
   <data name="GraphSettingsGrid.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Možnosti grafu</value>
     <comment>Screen reader prompt for the graph options panel</comment>
+  </data>
+  <data name="DockPanel_HistoryMemoryLists" xml:space="preserve">
+    <value>Zoznamy histórie a pamäte</value>
+    <comment>Automation name for the group of controls for history and memory lists.</comment>
+  </data>
+  <data name="DockPanel_MemoryList" xml:space="preserve">
+    <value>Zoznam pamäte</value>
+    <comment>Automation name for the group of controls for memory list.</comment>
+  </data>
+  <data name="Format_HistorySlotCleared" xml:space="preserve">
+    <value>Úsek histórie %1 bol vymazaný</value>
+    <comment>{Locked='%1'} Formatting string for a Narrator announcement when the user clears a history slot. The %1 is the index of the history slot. For example, users might hear "History slot 2 cleared".</comment>
+  </data>
+  <data name="CalcAlwaysOnTop" xml:space="preserve">
+    <value>Kalkulačka je vždy navrchu</value>
+    <comment>Announcement to indicate calculator window is always shown on top.</comment>
+  </data>
+  <data name="CalcBackToFullView" xml:space="preserve">
+    <value>Kalkulačka sa vrátila do úplného zobrazenia</value>
+    <comment>Announcement to indicate calculator window is now back to full view.</comment>
+  </data>
+  <data name="arithmeticShiftButtonSelected" xml:space="preserve">
+    <value>Vybratá možnosť Aritmetický posun</value>
+    <comment>Label for a radio button that toggles arithmetic shift behavior for the shift operations.</comment>
+  </data>
+  <data name="logicalShiftButtonSelected" xml:space="preserve">
+    <value>Vybratá možnosť Logický posun</value>
+    <comment>Label for a radio button that toggles logical shift behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCircularButtonSelected" xml:space="preserve">
+    <value>Vybratá možnosť Cyklický posun Otočiť</value>
+    <comment>Label for a radio button that toggles rotate circular behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCarryShiftButtonSelected" xml:space="preserve">
+    <value>Vybratá možnosť Cyklický posun Otočiť cez prevod</value>
+    <comment>Label for a radio button that toggles rotate circular with carry behavior for the shift operations.</comment>
   </data>
 </root>

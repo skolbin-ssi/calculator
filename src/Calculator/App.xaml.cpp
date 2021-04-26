@@ -148,6 +148,10 @@ task<void> App::SetupJumpList()
 
         for (NavCategory ^ option : calculatorOptions->Categories)
         {
+            if (!option->IsEnabled)
+            {
+                continue;
+            }
             ViewMode mode = option->Mode;
             auto item = JumpListItem::CreateWithArguments(((int)mode).ToString(), L"ms-resource:///Resources/" + NavCategory::GetNameResourceKey(mode));
             item->Description = L"ms-resource:///Resources/" + NavCategory::GetNameResourceKey(mode);
@@ -194,12 +198,12 @@ void App::OnLaunched(LaunchActivatedEventArgs ^ args)
         // If the app got pre-launch activated, then save that state in a flag
         m_preLaunched = true;
     }
+    NavCategory::InitializeCategoryManifest(args->User);
     OnAppLaunch(args, args->Arguments);
 }
 
 void App::OnAppLaunch(IActivatedEventArgs ^ args, String ^ argument)
 {
-
     // Uncomment the following lines to display frame-rate and per-frame CPU usage info.
     //#if _DEBUG
     //    if (IsDebuggerPresent())

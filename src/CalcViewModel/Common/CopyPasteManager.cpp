@@ -310,6 +310,9 @@ bool CopyPasteManager::ExpressionRegExMatch(
 
         if (operandMatched)
         {
+            // Remember the sign of the operand
+            bool isNegativeValue = operand->Data()[0] == L'-';
+
             // Remove characters that are valid in the expression but we do not want to include in length calculations
             // or which will break conversion from string-to-ULL.
             auto operandValue = SanitizeOperand(operand);
@@ -332,7 +335,11 @@ bool CopyPasteManager::ExpressionRegExMatch(
                     break;
                 }
 
-                if (operandAsULL->Value > maxOperandLengthAndValue.maxValue)
+                // Calculate how much we exceed the maxValue.
+                // In case we exceed it for 1 only, and working with negative number - that's a corner case for max signed values (e.g. -32768)
+                bool isOverflow = operandAsULL->Value > maxOperandLengthAndValue.maxValue;
+                bool isMaxNegativeValue = operandAsULL->Value - 1 == maxOperandLengthAndValue.maxValue;
+                if (isOverflow && !(isNegativeValue && isMaxNegativeValue))
                 {
                     expMatched = false;
                     break;
@@ -495,23 +502,32 @@ ULONG32 CopyPasteManager::StandardScientificOperandLength(Platform::String ^ ope
 {
     auto operandWstring = wstring(operand->Data());
     const bool hasDecimal = operandWstring.find('.') != wstring::npos;
+    auto length = operandWstring.length();
 
     if (hasDecimal)
     {
-        if (operandWstring.length() >= 2)
+        if (length >= 2)
         {
             if ((operandWstring[0] == L'0') && (operandWstring[1] == L'.'))
             {
-                return static_cast<ULONG32>(operandWstring.length() - 2);
+                length -= 2;
             }
             else
             {
-                return static_cast<ULONG32>(operandWstring.length() - 1);
+                length -= 1;
             }
         }
     }
 
-    return static_cast<ULONG32>(operandWstring.length());
+    auto exponentPos = operandWstring.find('e');
+    const bool hasExponent = exponentPos != wstring::npos;
+    if (hasExponent)
+    {
+        auto expLength = operandWstring.substr(exponentPos).length();
+        length -= expLength;
+    }
+
+    return static_cast<ULONG32>(length);
 }
 
 ULONG32 CopyPasteManager::ProgrammerOperandLength(Platform::String ^ operand, NumberBase numberBase)

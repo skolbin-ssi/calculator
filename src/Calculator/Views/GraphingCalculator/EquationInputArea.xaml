@@ -162,14 +162,17 @@
                                     <TextBox x:Name="MinTextBox"
                                              x:Uid="VariableMinTextBox"
                                              Grid.Column="1"
-                                             MaxWidth="18"
                                              Padding="2,16,2,2"
                                              Style="{StaticResource ThemedVariableTextBoxStyle}"
                                              FontSize="11"
                                              GotFocus="TextBoxGotFocus"
                                              KeyDown="TextBoxKeyDown"
                                              LosingFocus="TextBoxLosingFocus"
-                                             Text="{x:Bind Min, Mode=OneWay}"/>
+                                             Text="{x:Bind Min, Mode=OneWay}">
+                                        <TextBox.Resources>
+                                            <x:Double x:Key="TextControlThemeMinWidth">18</x:Double>
+                                        </TextBox.Resources>
+                                    </TextBox>
                                 </Grid>
                                 <Grid Grid.Column="1" HorizontalAlignment="Center">
                                     <Grid.ColumnDefinitions>
@@ -184,14 +187,17 @@
                                     <TextBox x:Name="StepTextBox"
                                              x:Uid="VariableStepTextBox"
                                              Grid.Column="1"
-                                             MaxWidth="18"
                                              Padding="2,16,2,2"
                                              Style="{StaticResource ThemedVariableTextBoxStyle}"
                                              FontSize="11"
                                              GotFocus="TextBoxGotFocus"
                                              KeyDown="TextBoxKeyDown"
                                              LosingFocus="TextBoxLosingFocus"
-                                             Text="{x:Bind Step, Mode=OneWay}"/>
+                                             Text="{x:Bind Step, Mode=OneWay}">
+                                        <TextBox.Resources>
+                                            <x:Double x:Key="TextControlThemeMinWidth">18</x:Double>
+                                        </TextBox.Resources>
+                                    </TextBox>
                                 </Grid>
                                 <Grid Grid.Column="2" HorizontalAlignment="Right">
                                     <Grid.ColumnDefinitions>
@@ -205,14 +211,17 @@
                                     <TextBox x:Name="MaxTextBox"
                                              x:Uid="VariableMaxTextBox"
                                              Grid.Column="1"
-                                             MaxWidth="18"
                                              Padding="2,16,2,2"
                                              Style="{StaticResource ThemedVariableTextBoxStyle}"
                                              FontSize="11"
                                              GotFocus="TextBoxGotFocus"
                                              KeyDown="TextBoxKeyDown"
                                              LosingFocus="TextBoxLosingFocus"
-                                             Text="{x:Bind Max, Mode=OneWay}"/>
+                                             Text="{x:Bind Max, Mode=OneWay}">
+                                        <TextBox.Resources>
+                                            <x:Double x:Key="TextControlThemeMinWidth">18</x:Double>
+                                        </TextBox.Resources>
+                                    </TextBox>
                                 </Grid>
                             </Grid>
 
@@ -266,6 +275,7 @@
 
             <Style x:Key="EquationTextBoxStyle" TargetType="controls:EquationTextBox">
                 <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="{ThemeResource TextControlBorderBrush}"/>
                 <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
                 <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
                 <Setter Property="FontWeight" Value="Normal"/>
@@ -360,7 +370,8 @@
                                                 <Setter Target="EquationButton.BorderBrush" Value="{ThemeResource EquationButtonHideLineBackgroundBrush}"/>
                                                 <Setter Target="EquationButton.Foreground" Value="{ThemeResource EquationButtonHideLineForegroundBrush}"/>
                                                 <Setter Target="EquationButton.IsEnabled" Value="false"/>
-                                                <Setter Target="EquationBoxBorder.Background" Value="{ThemeResource TextBoxBackgroundThemeBrush}"/>
+                                                <Setter Target="EquationBoxBorder.Background" Value="{ThemeResource TextControlBackgroundFocused}"/>
+                                                <Setter Target="EquationBoxBorder.BorderBrush" Value="{ThemeResource EquationButtonHideLineBackgroundBrush}"/>
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="Error">
@@ -403,7 +414,7 @@
                                         <VisualState x:Name="Focused">
                                             <VisualState.Setters>
                                                 <Setter Target="EquationBoxBorder.BorderBrush" Value="{ThemeResource EquationTextBoxBorderBrushFocused}"/>
-                                                <Setter Target="EquationBoxBorder.Background" Value="{ThemeResource TextBoxBackgroundThemeBrush}"/>
+                                                <Setter Target="EquationBoxBorder.Background" Value="{ThemeResource TextControlBackgroundFocused}"/>
                                                 <Setter Target="MathRichEditBox.Foreground" Value="{ThemeResource TextControlForegroundFocused}"/>
                                             </VisualState.Setters>
                                         </VisualState>
@@ -411,7 +422,7 @@
                                             <VisualState.Setters>
                                                 <Setter Target="EquationBoxBorder.BorderBrush" Value="{ThemeResource EquationBoxErrorBorderBrush}"/>
                                                 <Setter Target="EquationBoxBorder.BorderThickness" Value="1"/>
-                                                <Setter Target="EquationBoxBorder.Background" Value="{ThemeResource TextBoxBackgroundThemeBrush}"/>
+                                                <Setter Target="EquationBoxBorder.Background" Value="{ThemeResource TextControlBackgroundFocused}"/>
                                                 <Setter Target="ErrorIcon.Visibility" Value="Collapsed"/>
                                             </VisualState.Setters>
                                         </VisualState>
@@ -816,7 +827,7 @@
                                                             <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=EquationColor.Color}"/>
                                                             <SolidColorBrush x:Key="ButtonRevealBackgroundPointerOver" Color="Transparent"/>
                                                             <SolidColorBrush x:Key="ButtonRevealBackgroundPressed" Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=EquationColor.Color}"/>
-                                                            <SolidColorBrush x:Key="ButtonRevealBackground" Color="Transparent"/>
+                                                            <SolidColorBrush x:Key="ButtonRevealBackground" Color="{ThemeResource TextControlBackgroundFocused}"/>
                                                             <RevealBorderBrush x:Key="ButtonRevealBorderBrush"
                                                                                Opacity="0.33"
                                                                                FallbackColor="Transparent"

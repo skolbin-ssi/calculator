@@ -122,7 +122,7 @@
     <comment>{@Appx_ShortDisplayName@}{StringCategory="Feature Title"} This is the title of the official application when published through Windows Store.</comment>
   </data>
   <data name="DevAppName" xml:space="preserve">
-    <value>Kalkulator [deweloper]</value>
+    <value>Kalkulator [Dev]</value>
     <comment>{@Appx_ShortDisplayName@}{StringCategory="Feature Title"} This is the name of the application when built by a user via GitHub. We use a different name to make it easier for users to distinguish the apps when both this version and the Store version are installed on the same device.</comment>
   </data>
   <data name="AppStoreName" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment>{@Appx_DisplayName@}{StringCategory="Feature Title"} Name that shows up in the app store. It contains "Windows" to distinguish it from 3rd party calculator apps.</comment>
   </data>
   <data name="DevAppStoreName" xml:space="preserve">
-    <value>Kalkulator Windows [deweloper]</value>
+    <value>Kalkulator Windows [Dev]</value>
     <comment>{@Appx_DisplayName@}{StringCategory="Feature Title"} Name that shows up in the app store. It contains "Windows" to distinguish it from 3rd party calculator apps. This is the the version of the name used when the app is built by a user via GitHub.</comment>
   </data>
   <data name="AppDescription" xml:space="preserve">
@@ -138,7 +138,7 @@
     <comment>{@Appx_Description@} This description is used for the official application when published through Windows Store.</comment>
   </data>
   <data name="DevAppDescription" xml:space="preserve">
-    <value>Kalkulator [deweloper]</value>
+    <value>Kalkulator [Dev]</value>
     <comment>{@Appx_Description@} This is the description of the application when built by a user via GitHub. We use a different description to make it easier for users to distinguish the apps when both this version and the Store version are installed on the same device.</comment>
   </data>
   <data name="copyMenuItem" xml:space="preserve">
@@ -790,15 +790,15 @@
     <comment>Screen reader prompt for the Calculator number "F" button</comment>
   </data>
   <data name="andButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>And</value>
+    <value>I</value>
     <comment>Screen reader prompt for the Calculator And button</comment>
   </data>
   <data name="orButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Or</value>
+    <value>Lub</value>
     <comment>Screen reader prompt for the Calculator Or button</comment>
   </data>
   <data name="notButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Not</value>
+    <value>Nie</value>
     <comment>Screen reader prompt for the Calculator Not button</comment>
   </data>
   <data name="rolButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -818,7 +818,7 @@
     <comment>Screen reader prompt for the Calculator RSH button</comment>
   </data>
   <data name="xorButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Lub wykluczające</value>
+    <value>Wyłączny lub</value>
     <comment>Screen reader prompt for the Calculator XOR button</comment>
   </data>
   <data name="qwordButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -994,7 +994,7 @@
     <comment>Screen reader prompt for the inverted tanh on the scientific operator keypad.</comment>
   </data>
   <data name="powerButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>„X” do potęgi</value>
+    <value>'X' do wykładnika potęgowego</value>
     <comment>Screen reader prompt for x power y button on the scientific operator keypad. </comment>
   </data>
   <data name="powerOf10Button.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -1006,7 +1006,7 @@
     <comment>Screen reader for the e power x on the scientific operator keypad.</comment>
   </data>
   <data name="ySquareRootButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>pierwiastek „y” stopnia z „x”</value>
+    <value>pierwiastek 'y' stopnia 'x'</value>
     <comment>Screen reader for the yth root of x on the scientific operator keypad. Note: String is meant to read out whatever the "Yth root" mathematical operator sounds like.</comment>
   </data>
   <data name="logBase10Button.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -1122,7 +1122,7 @@
     <comment>Unit conversion category name called Length</comment>
   </data>
   <data name="CategoryName_PowerText" xml:space="preserve">
-    <value>Moc</value>
+    <value>Zasilanie</value>
     <comment>Unit conversion category name called Power (eg. the power of an engine or a light bulb)</comment>
   </data>
   <data name="CategoryName_SpeedText" xml:space="preserve">
@@ -1270,7 +1270,7 @@
     <comment>An abbreviation for a measurement unit of volume</comment>
   </data>
   <data name="UnitName_CupUS" xml:space="preserve">
-    <value>Filiżanki (USA)</value>
+    <value>Cups (USA)</value>
     <comment>A measurement unit for volume. (Please choose the most appropriate plural form to fit any number between 0 and 999,999,999,999,999)</comment>
   </data>
   <data name="UnitAbbreviation_CupUS" xml:space="preserve">
@@ -2317,6 +2317,10 @@
     <value>© %1 Microsoft. Wszelkie prawa zastrzeżone.</value>
     <comment>{Locked="%1"}. Copyright statement, displayed on the About panel. %1 = the current year (4 digits)</comment>
   </data>
+  <data name="AboutFlyoutContribute" xml:space="preserve">
+    <value>Aby dowiedzieć się, jak można uczestniczyć w programie Kalkulator systemu Windows, Wyewidencjonuj projekt na stronie %HL%GitHub%HL%.</value>
+    <comment>{Locked="%HL%GitHub%HL%"}. GitHub link, Displayed on the About panel</comment>
+  </data>
   <data name="AboutButton.Content" xml:space="preserve">
     <value>Informacje</value>
     <comment>The text that shows in the dropdown navigation control to open About panel</comment>
@@ -2652,7 +2656,7 @@
     <comment>Auditory feedback for Screen Reader users. Users will hear "Display is 7 x or" when the button is pressed. XOR is a mathematical operation on two binary values. Here the feedback is "x or" in order to get the correct pronunciation.</comment>
   </data>
   <data name="andButton.[using:CalculatorApp.Controls]CalculatorButton.AuditoryFeedback" xml:space="preserve">
-    <value>i</value>
+    <value>oraz</value>
     <comment>Auditory feedback for Screen Reader users. Users will hear "Display is 7 and" when the button is pressed. AND is a mathematical operation on two binary values.</comment>
   </data>
   <data name="CurrencyFromToRatioFormat" xml:space="preserve">
@@ -3451,6 +3455,10 @@
     <value>Analiza nie jest obsługiwana w przypadku tej funkcji.</value>
     <comment>Error displayed when graph analysis is not supported or had an error.</comment>
   </data>
+  <data name="KGFVariableIsNotX" xml:space="preserve">
+    <value>Analiza jest obsługiwana tylko w przypadku funkcji w formacie f(x). Przykład: y=x</value>
+    <comment>Error displayed when graph analysis detects the function format is not f(x).</comment>
+  </data>
   <data name="Maxima" xml:space="preserve">
     <value>Maksimum</value>
     <comment>Title for KeyGraphFeatures Maxima Property</comment>
@@ -3472,8 +3480,8 @@
     <comment>Title for KeyGraphFeatures Parity Property</comment>
   </data>
   <data name="Periodicity" xml:space="preserve">
-    <value>Okres</value>
-    <comment>Title for KeyGraphFeatures Periodicity Property</comment>
+    <value>Cykl</value>
+    <comment>Title for KeyGraphFeatures Periodicity Property. The period of a mathematical function is the smallest interval in its input values such that its output values repeat every such interval.</comment>
   </data>
   <data name="Range" xml:space="preserve">
     <value>Zbiór wartości</value>
@@ -3547,7 +3555,7 @@
     <comment>Error that occurs during graphing when the equation is out of domain.</comment>
   </data>
   <data name="GE_NotSupported" xml:space="preserve">
-    <value>Nie można stworzyć wykresu tego równania</value>
+    <value>Tworzenie wykresu tego równania nie jest obsługiwane</value>
     <comment>Error that occurs during graphing when the equation is not supported.</comment>
   </data>
   <data name="ParenthesisMismatch" xml:space="preserve">
@@ -4085,5 +4093,41 @@
   <data name="GraphSettingsGrid.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Opcje wykresu</value>
     <comment>Screen reader prompt for the graph options panel</comment>
+  </data>
+  <data name="DockPanel_HistoryMemoryLists" xml:space="preserve">
+    <value>Lista historii i pamięci</value>
+    <comment>Automation name for the group of controls for history and memory lists.</comment>
+  </data>
+  <data name="DockPanel_MemoryList" xml:space="preserve">
+    <value>Lista pamięci</value>
+    <comment>Automation name for the group of controls for memory list.</comment>
+  </data>
+  <data name="Format_HistorySlotCleared" xml:space="preserve">
+    <value>Wyczyszczono miejsce historii %1</value>
+    <comment>{Locked='%1'} Formatting string for a Narrator announcement when the user clears a history slot. The %1 is the index of the history slot. For example, users might hear "History slot 2 cleared".</comment>
+  </data>
+  <data name="CalcAlwaysOnTop" xml:space="preserve">
+    <value>Kalkulator zawsze na wierzchu</value>
+    <comment>Announcement to indicate calculator window is always shown on top.</comment>
+  </data>
+  <data name="CalcBackToFullView" xml:space="preserve">
+    <value>Kalkulator powrócił do pełnego widoku</value>
+    <comment>Announcement to indicate calculator window is now back to full view.</comment>
+  </data>
+  <data name="arithmeticShiftButtonSelected" xml:space="preserve">
+    <value>Zaznaczono Przesunięcie arytmetyczne</value>
+    <comment>Label for a radio button that toggles arithmetic shift behavior for the shift operations.</comment>
+  </data>
+  <data name="logicalShiftButtonSelected" xml:space="preserve">
+    <value>Zaznaczono Przesunięcie logiczne</value>
+    <comment>Label for a radio button that toggles logical shift behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCircularButtonSelected" xml:space="preserve">
+    <value>Zaznaczono Przesunięcie cykliczne Obrót</value>
+    <comment>Label for a radio button that toggles rotate circular behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCarryShiftButtonSelected" xml:space="preserve">
+    <value>Zaznaczono Przesunięcie cykliczne Obrót przez przeniesienie</value>
+    <comment>Label for a radio button that toggles rotate circular with carry behavior for the shift operations.</comment>
   </data>
 </root>

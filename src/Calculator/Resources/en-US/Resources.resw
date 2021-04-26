@@ -481,15 +481,7 @@
     <value>O</value>
     <comment>{Locked}The shortcut for the inverted cos button</comment>
   </data>
-  <data name="invcosButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyInverseChord" xml:space="preserve">
-    <value>O</value>
-    <comment>{Locked}The shortcut for the inverted cos button</comment>
-  </data>
   <data name="invcoshButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlShiftChord" xml:space="preserve">
-    <value>O</value>
-    <comment>{Locked}The shortcut for the inverted cosh button</comment>
-  </data>
-  <data name="invcoshButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlInverseChord" xml:space="preserve">
     <value>O</value>
     <comment>{Locked}The shortcut for the inverted cosh button</comment>
   </data>
@@ -497,15 +489,7 @@
     <value>S</value>
     <comment>{Locked}This is the shortcut for the inverted sin button</comment>
   </data>
-  <data name="invsinButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyInverseChord" xml:space="preserve">
-    <value>S</value>
-    <comment>{Locked}This is the shortcut for the inverted sin button</comment>
-  </data>
   <data name="invsinhButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlShiftChord" xml:space="preserve">
-    <value>S</value>
-    <comment>{Locked}This is the shortcut for the inverted sinh button</comment>
-  </data>
-  <data name="invsinhButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlInverseChord" xml:space="preserve">
     <value>S</value>
     <comment>{Locked}This is the shortcut for the inverted sinh button</comment>
   </data>
@@ -513,15 +497,7 @@
     <value>T</value>
     <comment>{Locked}This is the shortcut for the inverted tan button. </comment>
   </data>
-  <data name="invtanButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyInverseChord" xml:space="preserve">
-    <value>T</value>
-    <comment>{Locked}This is the shortcut for the inverted tan button. </comment>
-  </data>
   <data name="invtanhButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlShiftChord" xml:space="preserve">
-    <value>T</value>
-    <comment>{Locked}This is the shortcut for the inverted tanh button</comment>
-  </data>
-  <data name="invtanhButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlInverseChord" xml:space="preserve">
     <value>T</value>
     <comment>{Locked}This is the shortcut for the inverted tanh button</comment>
   </data>
@@ -2741,6 +2717,10 @@
     <value>© %1 Microsoft. All rights reserved.</value>
     <comment>{Locked="%1"}. Copyright statement, displayed on the About panel. %1 = the current year (4 digits)</comment>
   </data>
+  <data name="AboutFlyoutContribute" xml:space="preserve">
+    <value>To learn how you can contribute to Windows Calculator, check out the project on %HL%GitHub%HL%.</value>
+    <comment>{Locked="%HL%GitHub%HL%"}. GitHub link, Displayed on the About panel</comment>
+  </data>
   <data name="AboutButton.Content" xml:space="preserve">
     <value>About</value>
     <comment>The text that shows in the dropdown navigation control to open About panel</comment>
@@ -3587,19 +3567,11 @@
     <value>U</value>
     <comment>{Locked}The shortcut for the inverted sec button</comment>
   </data>
-  <data name="invsecButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyInverseChord" xml:space="preserve">
-    <value>U</value>
-    <comment>{Locked}The shortcut for the inverted sec button</comment>
-  </data>
   <data name="invsechButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Hyperbolic Arc Secant</value>
     <comment>Screen reader prompt for the Calculator button arc sec in the scientific flyout keypad</comment>
   </data>
   <data name="invsechButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlShiftChord" xml:space="preserve">
-    <value>U</value>
-    <comment>{Locked}The shortcut for the inverted sech button</comment>
-  </data>
-  <data name="invsechButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlInverseChord" xml:space="preserve">
     <value>U</value>
     <comment>{Locked}The shortcut for the inverted sech button</comment>
   </data>
@@ -3623,23 +3595,11 @@
     <value>Arc Cosecant</value>
     <comment>Screen reader prompt for the Calculator button arc csc in the scientific flyout keypad</comment>
   </data>
-  <data name="invcscButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyShiftChord" xml:space="preserve">
-    <value>I</value>
-    <comment>{Locked}The shortcut for the inverted sec button</comment>
-  </data>
-  <data name="invcscButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyInverseChord" xml:space="preserve">
-    <value>I</value>
-    <comment>{Locked}The shortcut for the inverted sec button</comment>
-  </data>
   <data name="invcschButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Hyperbolic Arc Cosecant</value>
     <comment>Screen reader prompt for the Calculator button arc csc in the scientific flyout keypad</comment>
   </data>
   <data name="invcschButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlShiftChord" xml:space="preserve">
-    <value>I</value>
-    <comment>{Locked}The shortcut for the inverted sech button</comment>
-  </data>
-  <data name="invcschButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlInverseChord" xml:space="preserve">
     <value>I</value>
     <comment>{Locked}The shortcut for the inverted sech button</comment>
   </data>
@@ -3667,17 +3627,9 @@
     <value>J</value>
     <comment>{Locked}The shortcut for the inverted sec button</comment>
   </data>
-  <data name="invcotButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyInverseChord" xml:space="preserve">
-    <value>J</value>
-    <comment>{Locked}The shortcut for the inverted sec button</comment>
-  </data>
   <data name="invcothButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Hyperbolic Arc Cotangent</value>
     <comment>Screen reader prompt for the Calculator button arc coth in the scientific flyout keypad</comment>
-  </data>
-  <data name="invcothButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlInverseChord" xml:space="preserve">
-    <value>J</value>
-    <comment>{Locked}The shortcut for the inverted sech button</comment>
   </data>
   <data name="invcothButton.[using:CalculatorApp.Common]KeyboardShortcutManager.VirtualKeyControlShiftChord" xml:space="preserve">
     <value>J</value>
@@ -4071,6 +4023,10 @@
     <value>Analysis is not supported for this function.</value>
     <comment>Error displayed when graph analysis is not supported or had an error.</comment>
   </data>
+  <data name="KGFVariableIsNotX" xml:space="preserve">
+    <value>Analysis is only supported for functions in the f(x) format. Example: y=x</value>
+    <comment>Error displayed when graph analysis detects the function format is not f(x).</comment>
+  </data>
   <data name="Maxima" xml:space="preserve">
     <value>Maxima</value>
     <comment>Title for KeyGraphFeatures Maxima Property</comment>
@@ -4093,7 +4049,7 @@
   </data>
   <data name="Periodicity" xml:space="preserve">
     <value>Period</value>
-    <comment>Title for KeyGraphFeatures Periodicity Property</comment>
+    <comment>Title for KeyGraphFeatures Periodicity Property. The period of a mathematical function is the smallest interval in its input values such that its output values repeat every such interval.</comment>
   </data>
   <data name="Range" xml:space="preserve">
     <value>Range</value>
@@ -4706,5 +4662,41 @@
   <data name="GraphSettingsGrid.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Graph Options</value>
     <comment>Screen reader prompt for the graph options panel</comment>
+  </data>
+  <data name="DockPanel_HistoryMemoryLists" xml:space="preserve">
+    <value>History and Memory lists</value>
+    <comment>Automation name for the group of controls for history and memory lists.</comment>
+  </data>
+  <data name="DockPanel_MemoryList" xml:space="preserve">
+    <value>Memory list</value>
+    <comment>Automation name for the group of controls for memory list.</comment>
+  </data>
+  <data name="Format_HistorySlotCleared" xml:space="preserve">
+    <value>History slot %1 cleared</value>
+    <comment>{Locked='%1'} Formatting string for a Narrator announcement when the user clears a history slot. The %1 is the index of the history slot. For example, users might hear "History slot 2 cleared".</comment>
+  </data>
+  <data name="CalcAlwaysOnTop" xml:space="preserve">
+    <value>Calculator always on top</value>
+    <comment>Announcement to indicate calculator window is always shown on top.</comment>
+  </data>
+  <data name="CalcBackToFullView" xml:space="preserve">
+    <value>Calculator back to full view</value>
+    <comment>Announcement to indicate calculator window is now back to full view.</comment>
+  </data>
+  <data name="arithmeticShiftButtonSelected" xml:space="preserve">
+    <value>Arithmetic Shift selected</value>
+    <comment>Label for a radio button that toggles arithmetic shift behavior for the shift operations.</comment>
+  </data>
+  <data name="logicalShiftButtonSelected" xml:space="preserve">
+    <value>Logical Shift selected</value>
+    <comment>Label for a radio button that toggles logical shift behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCircularButtonSelected" xml:space="preserve">
+    <value>Rotate Circular Shift selected</value>
+    <comment>Label for a radio button that toggles rotate circular behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCarryShiftButtonSelected" xml:space="preserve">
+    <value>Rotate Through Carry Circular Shift selected</value>
+    <comment>Label for a radio button that toggles rotate circular with carry behavior for the shift operations.</comment>
   </data>
 </root>

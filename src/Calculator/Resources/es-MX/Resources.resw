@@ -526,7 +526,7 @@
     <comment>The text that shows in the dropdown navigation control for the calculator group.</comment>
   </data>
   <data name="ConverterModeTextCaps" xml:space="preserve">
-    <value>Convertidor</value>
+    <value>Conversor</value>
     <comment>The text that shows in the dropdown navigation control for the converter group in upper case. The previous key for this was "ConverterMode.Text".</comment>
   </data>
   <data name="CalculatorModeTextCaps" xml:space="preserve">
@@ -558,7 +558,7 @@
     <comment>{Locked="%1"}. Screen reader prompt for the Calculator expression results. %1 = Localized display value, e.g. "50 + 2 - 60 +".</comment>
   </data>
   <data name="Display_Copied" xml:space="preserve">
-    <value>Mostrar el valor copiado al Portapapeles</value>
+    <value>Mostrar el valor copiado al portapapeles</value>
     <comment>Screen reader prompt for the Calculator display copy button, when the button is invoked.</comment>
   </data>
   <data name="HistoryPane" xml:space="preserve">
@@ -622,7 +622,7 @@
     <comment>Screen reader prompt for the Calculator Clear Memory button, when the button is invoked.</comment>
   </data>
   <data name="MemRecall.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Recuperar de memoria</value>
+    <value>Recuperar de la memoria</value>
     <comment>Screen reader prompt for the Calculator Memory Recall button</comment>
   </data>
   <data name="MemRecall.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
@@ -638,7 +638,7 @@
     <comment>This is the tool tip automation name for the Memory Add (M+) button.</comment>
   </data>
   <data name="MemMinus.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Restar de memoria</value>
+    <value>Restar memoria</value>
     <comment>Screen reader prompt for the Calculator Memory Subtract button</comment>
   </data>
   <data name="MemMinus.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
@@ -682,7 +682,7 @@
     <comment>Screen reader prompt for the Calculator Memory Add swipe button in the Memory list</comment>
   </data>
   <data name="MemPlusMenuItem.Text" xml:space="preserve">
-    <value>Sumar a elemento de memoria</value>
+    <value>Agregar a elemento de memoria</value>
     <comment>Text string for the Calculator Memory Add option in the Memory list context menu</comment>
   </data>
   <data name="MemMinusSwipeItem.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -1050,7 +1050,7 @@
     <comment>This the Deg button's Degree mode automation nameon the scientific operator keypad. Should read as "Degrees toggle button".</comment>
   </data>
   <data name="gradButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Alternar gradianes</value>
+    <value>Alternar gradientes</value>
     <comment>This is the Deg button's Grad mode automation name on the scientific operator keypad. Should read as "Gradians toggle button".</comment>
   </data>
   <data name="radButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -1158,7 +1158,7 @@
     <comment>Unit conversion category name called Currency</comment>
   </data>
   <data name="UnitName_FluidOunceUK" xml:space="preserve">
-    <value>Onzas líquidas (Reino Unido)</value>
+    <value>Onzas líquidas (Reino Unido)</value>
     <comment>A measurement unit for volume, in plural. (Please choose the most appropriate plural form to fit any number between 0 and 999,999,999,999,999)</comment>
   </data>
   <data name="UnitAbbreviation_FluidOunceUK" xml:space="preserve">
@@ -1378,7 +1378,7 @@
     <comment>An abbreviation for a measurement unit of time</comment>
   </data>
   <data name="UnitAbbreviation_Inch" xml:space="preserve">
-    <value>en</value>
+    <value>in</value>
     <comment>An abbreviation for a measurement unit of length</comment>
   </data>
   <data name="UnitAbbreviation_Joule" xml:space="preserve">
@@ -1546,7 +1546,7 @@
     <comment>An abbreviation for a measurement unit of length</comment>
   </data>
   <data name="UnitAbbreviation_Year" xml:space="preserve">
-    <value>a</value>
+    <value>a.</value>
     <comment>An abbreviation for a measurement unit of time</comment>
   </data>
   <data name="UnitAbbreviation_Gibibits" xml:space="preserve">
@@ -2030,7 +2030,7 @@
     <comment>A measurement unit for Pressure.</comment>
   </data>
   <data name="UnitName_MillimeterOfMercury" xml:space="preserve">
-    <value>Milímetros de mercurio</value>
+    <value>Milímetros de mercurio </value>
     <comment>A measurement unit for Pressure.</comment>
   </data>
   <data name="UnitName_Pascal" xml:space="preserve">
@@ -2317,6 +2317,10 @@
     <value>© %1 Microsoft. Todos los derechos reservados.</value>
     <comment>{Locked="%1"}. Copyright statement, displayed on the About panel. %1 = the current year (4 digits)</comment>
   </data>
+  <data name="AboutFlyoutContribute" xml:space="preserve">
+    <value>Para obtener información sobre cómo puede contribuir a la calculadora de Windows, consulta el proyecto en %HL%GitHub%HL%.</value>
+    <comment>{Locked="%HL%GitHub%HL%"}. GitHub link, Displayed on the About panel</comment>
+  </data>
   <data name="AboutButton.Content" xml:space="preserve">
     <value>Acerca de</value>
     <comment>The text that shows in the dropdown navigation control to open About panel</comment>
@@ -2338,7 +2342,7 @@
     <comment>Screen reader prompt for the negate button on the converter operator keypad</comment>
   </data>
   <data name="CannotPaste" xml:space="preserve">
-    <value>La expresión no se puede pegar.</value>
+    <value>La expresión no se puede pegar</value>
     <comment>The paste operation cannot be performed, if the expression is invalid.</comment>
   </data>
   <data name="UnitName_Gibibits" xml:space="preserve">
@@ -2792,7 +2796,7 @@
     <comment>Name for the sine function in radians mode. Used by screen readers.</comment>
   </data>
   <data name="SineGradians" xml:space="preserve">
-    <value>gradianes de seno</value>
+    <value>gradientes de seno</value>
     <comment>Name for the sine function in gradians mode. Used by screen readers.</comment>
   </data>
   <data name="InverseSineDegrees" xml:space="preserve">
@@ -2804,7 +2808,7 @@
     <comment>Name for the inverse sine function in radians mode. Used by screen readers.</comment>
   </data>
   <data name="InverseSineGradians" xml:space="preserve">
-    <value>gradianes de seno inverso</value>
+    <value>gradientes de seno inverso</value>
     <comment>Name for the inverse sine function in gradians mode. Used by screen readers.</comment>
   </data>
   <data name="HyperbolicSine" xml:space="preserve">
@@ -2824,7 +2828,7 @@
     <comment>Name for the cosine function in radians mode. Used by screen readers.</comment>
   </data>
   <data name="CosineGradians" xml:space="preserve">
-    <value>gradianes de coseno</value>
+    <value>gradientes de coseno</value>
     <comment>Name for the cosine function in gradians mode. Used by screen readers.</comment>
   </data>
   <data name="InverseCosineDegrees" xml:space="preserve">
@@ -2836,7 +2840,7 @@
     <comment>Name for the inverse cosine function in radians mode. Used by screen readers.</comment>
   </data>
   <data name="InverseCosineGradians" xml:space="preserve">
-    <value>gradianes de coseno inverso</value>
+    <value>gradientes de coseno inverso</value>
     <comment>Name for the inverse cosine function in gradians mode. Used by screen readers.</comment>
   </data>
   <data name="HyperbolicCosine" xml:space="preserve">
@@ -2856,7 +2860,7 @@
     <comment>Name for the tangent function in radians mode. Used by screen readers.</comment>
   </data>
   <data name="TangentGradians" xml:space="preserve">
-    <value>gradianes de tangente</value>
+    <value>gradientes de tangente</value>
     <comment>Name for the tangent function in gradians mode. Used by screen readers.</comment>
   </data>
   <data name="InverseTangentDegrees" xml:space="preserve">
@@ -2868,7 +2872,7 @@
     <comment>Name for the inverse tangent function in radians mode. Used by screen readers.</comment>
   </data>
   <data name="InverseTangentGradians" xml:space="preserve">
-    <value>gradianes de tangente inversa</value>
+    <value>gradientes de tangente inversa</value>
     <comment>Name for the inverse tangent function in gradians mode. Used by screen readers.</comment>
   </data>
   <data name="HyperbolicTangent" xml:space="preserve">
@@ -3248,7 +3252,7 @@
     <comment>Used to describe the last bit of a binary number. Used in bit flip</comment>
   </data>
   <data name="GraphingCalculatorModeText" xml:space="preserve">
-    <value>Representación gráfica</value>
+    <value>Graficar</value>
     <comment>Name of the Graphing mode of the Calculator app. Displayed in the navigation menu.</comment>
   </data>
   <data name="plotButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -3451,6 +3455,10 @@
     <value>No se admite el análisis para la función.</value>
     <comment>Error displayed when graph analysis is not supported or had an error.</comment>
   </data>
+  <data name="KGFVariableIsNotX" xml:space="preserve">
+    <value>El análisis solo se admite para funciones en formato f(x). Ejemplo: y = x</value>
+    <comment>Error displayed when graph analysis detects the function format is not f(x).</comment>
+  </data>
   <data name="Maxima" xml:space="preserve">
     <value>Máximos</value>
     <comment>Title for KeyGraphFeatures Maxima Property</comment>
@@ -3473,7 +3481,7 @@
   </data>
   <data name="Periodicity" xml:space="preserve">
     <value>Período</value>
-    <comment>Title for KeyGraphFeatures Periodicity Property</comment>
+    <comment>Title for KeyGraphFeatures Periodicity Property. The period of a mathematical function is the smallest interval in its input values such that its output values repeat every such interval.</comment>
   </data>
   <data name="Range" xml:space="preserve">
     <value>Intervalo</value>
@@ -3547,7 +3555,7 @@
     <comment>Error that occurs during graphing when the equation is out of domain.</comment>
   </data>
   <data name="GE_NotSupported" xml:space="preserve">
-    <value>Representar gráficamente esta ecuación no está soportado</value>
+    <value>No es posible graficar esta ecuación</value>
     <comment>Error that occurs during graphing when the equation is not supported.</comment>
   </data>
   <data name="ParenthesisMismatch" xml:space="preserve">
@@ -4085,5 +4093,41 @@
   <data name="GraphSettingsGrid.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Opciones de gráfico</value>
     <comment>Screen reader prompt for the graph options panel</comment>
+  </data>
+  <data name="DockPanel_HistoryMemoryLists" xml:space="preserve">
+    <value>Listas de memoria e historial</value>
+    <comment>Automation name for the group of controls for history and memory lists.</comment>
+  </data>
+  <data name="DockPanel_MemoryList" xml:space="preserve">
+    <value>Lista de memoria</value>
+    <comment>Automation name for the group of controls for memory list.</comment>
+  </data>
+  <data name="Format_HistorySlotCleared" xml:space="preserve">
+    <value>Ranura de memoria %1 borrada</value>
+    <comment>{Locked='%1'} Formatting string for a Narrator announcement when the user clears a history slot. The %1 is the index of the history slot. For example, users might hear "History slot 2 cleared".</comment>
+  </data>
+  <data name="CalcAlwaysOnTop" xml:space="preserve">
+    <value>Calculadora siempre visible</value>
+    <comment>Announcement to indicate calculator window is always shown on top.</comment>
+  </data>
+  <data name="CalcBackToFullView" xml:space="preserve">
+    <value>Calculadora de nuevo a vista completa</value>
+    <comment>Announcement to indicate calculator window is now back to full view.</comment>
+  </data>
+  <data name="arithmeticShiftButtonSelected" xml:space="preserve">
+    <value>Desplazamiento aritmético seleccionado</value>
+    <comment>Label for a radio button that toggles arithmetic shift behavior for the shift operations.</comment>
+  </data>
+  <data name="logicalShiftButtonSelected" xml:space="preserve">
+    <value>Desplazamiento lógico seleccionado</value>
+    <comment>Label for a radio button that toggles logical shift behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCircularButtonSelected" xml:space="preserve">
+    <value>Girar con desplazamiento circular esta seleccionado</value>
+    <comment>Label for a radio button that toggles rotate circular behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCarryShiftButtonSelected" xml:space="preserve">
+    <value>Girar con desplazamiento circular de acarreo</value>
+    <comment>Label for a radio button that toggles rotate circular with carry behavior for the shift operations.</comment>
   </data>
 </root>

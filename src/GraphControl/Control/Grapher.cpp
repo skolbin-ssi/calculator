@@ -120,20 +120,34 @@ namespace GraphControl
         {
             if (auto renderer = m_graph->GetRenderer())
             {
-                if (m_replot)
+                HRESULT hr;
+
+                // Reset the Grid using the m_initialDisplayRange properties when the user was last in Manual Adjustment mode and an equation was added.
+                // Reset the Grid using the TryPlotGraph method when the range is updated via Graph Settings. Return out of this block so we don't render 2 times.
+                // Reset the Grid using the ResetRange() in all other cases.
+                if (m_resetUsingInitialDisplayRange)
+                {
+                    hr = renderer->SetDisplayRanges(m_initialDisplayRangeXMin, m_initialDisplayRangeXMax, m_initialDisplayRangeYMin, m_initialDisplayRangeYMax);
+                    m_resetUsingInitialDisplayRange = false;
+                }
+                else if (m_rangeUpdatedBySettings)
                 {
                     IsKeepCurrentView = false;
-                    m_replot = false;
                     TryPlotGraph(false, false);
-
+                    m_rangeUpdatedBySettings = false;
+                    GraphViewChangedEvent(this, GraphViewChangedReason::Reset);
+                    return;
                 }
-                else if (SUCCEEDED(renderer->ResetRange()))
+                else
+                {
+                    hr = renderer->ResetRange();
+                }
+
+                if (SUCCEEDED(hr))
                 {
                     m_renderMain->RunRenderPass();
+                    GraphViewChangedEvent(this, GraphViewChangedReason::Reset);
                 }
-
-                GraphViewChangedEvent(this, GraphViewChangedReason::Reset);
-                return;
             }
         }
     }
@@ -240,8 +254,8 @@ namespace GraphControl
                 vector<Equation ^> equationVector;
                 equationVector.push_back(equation);
                 UpdateGraphOptions(graph->GetOptions(), equationVector);
-
-                if (analyzer->CanFunctionAnalysisBePerformed())
+                bool variableIsNotX;
+                if (analyzer->CanFunctionAnalysisBePerformed(variableIsNotX) && !variableIsNotX)
                 {
                     if (S_OK
                         == analyzer->PerformFunctionAnalysis(
@@ -250,6 +264,10 @@ namespace GraphControl
                         Graphing::IGraphFunctionAnalysisData functionAnalysisData = m_solver->Analyze(analyzer.get());
                         return KeyGraphFeaturesInfo::Create(functionAnalysisData);
                     }
+                }
+                else if (variableIsNotX)
+                {
+                    return KeyGraphFeaturesInfo::Create(CalculatorApp::AnalysisErrorType::VariableIsNotX);
                 }
                 else
                 {
@@ -263,7 +281,7 @@ namespace GraphControl
 
     void Grapher::PlotGraph(bool keepCurrentView)
     {
-        TryPlotGraph(keepCurrentView,false);
+        TryPlotGraph(keepCurrentView, false);
     }
 
     task<void> Grapher::TryPlotGraph(bool keepCurrentView, bool shouldRetry)
@@ -569,7 +587,7 @@ namespace GraphControl
                 auto lineColor = eq->LineColor;
                 graphColors.emplace_back(lineColor.R, lineColor.G, lineColor.B, lineColor.A);
 
-                if (eq->GraphedEquation)                
+                if (eq->GraphedEquation)
                 {
                     if (!eq->HasGraphError && eq->IsSelected)
                     {
@@ -635,7 +653,7 @@ namespace GraphControl
         if (m_renderMain->Tracing)
         {
             TracingChangedEvent(true);
-            TracingValueChangedEvent(m_renderMain->TraceValue);
+            TracingValueChangedEvent(m_renderMain->XTraceValue, m_renderMain->YTraceValue);
         }
         else
         {
@@ -1067,7 +1085,6 @@ void Grapher::OnGraphBackgroundPropertyChanged(Windows::UI::Color /*oldValue*/, 
     }
 }
 
-
 void Grapher::OnGridLinesColorPropertyChanged(Windows::UI::Color /*oldValue*/, Windows::UI::Color newValue)
 {
     if (m_renderMain != nullptr && m_graph != nullptr)
@@ -1088,27 +1105,41 @@ void Grapher::OnLineWidthPropertyChanged(double oldValue, double newValue)
             m_renderMain->SetPointRadius(LineWidth + 1);
             m_renderMain->RunRenderPass();
 
-             TraceLogger::GetInstance()->LogLineWidthChanged();
+            TraceLogger::GetInstance()->LogLineWidthChanged();
         }
     }
 }
 
 optional<vector<shared_ptr<Graphing::IEquation>>> Grapher::TryInitializeGraph(bool keepCurrentView, const IExpression* graphingExp)
 {
+    critical_section::scoped_lock lock(m_renderMain->GetCriticalSection());
     if (keepCurrentView || IsKeepCurrentView)
     {
+        auto renderer = m_graph->GetRenderer();
         double xMin, xMax, yMin, yMax;
-        m_graph->GetRenderer()->GetDisplayRanges(xMin, xMax, yMin, yMax);
+        renderer->GetDisplayRanges(xMin, xMax, yMin, yMax);
         auto initResult = m_graph->TryInitialize(graphingExp);
-        m_graph->GetRenderer()->SetDisplayRanges(xMin, xMax, yMin, yMax);
+        if (initResult != nullopt)
+        {
+            if (IsKeepCurrentView)
+            {
+                // PrepareGraph() populates the values of the graph after TryInitialize but before rendering. This allows us to get the range of the graph to be rendered.
+                if (SUCCEEDED(renderer->PrepareGraph()))
+                {
+                    // Get the initial display ranges from the graph that was just initialized to be used in ResetGrid if they user clicks the GraphView button.
+                    renderer->GetDisplayRanges(m_initialDisplayRangeXMin, m_initialDisplayRangeXMax, m_initialDisplayRangeYMin, m_initialDisplayRangeYMax);
+                    m_resetUsingInitialDisplayRange = true;
+                }
+            }
 
-        m_replot = true;
+            renderer->SetDisplayRanges(xMin, xMax, yMin, yMax);
+        }
 
         return initResult;
     }
     else
     {
-        m_replot = false;
+        m_resetUsingInitialDisplayRange = false;
         return m_graph->TryInitialize(graphingExp);
     }
 }

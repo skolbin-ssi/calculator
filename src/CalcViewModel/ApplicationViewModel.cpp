@@ -58,7 +58,6 @@ void ApplicationViewModel::Mode::set(ViewMode value)
     {
         PreviousMode = m_mode;
         m_mode = value;
-        IsModePreview = NavCategory::IsViewModePreview(m_mode);
         SetDisplayNormalAlwaysOnTopOption();
         OnModeChanged();
         RaisePropertyChanged(ModePropertyName);
@@ -76,7 +75,7 @@ void ApplicationViewModel::Categories::set(IObservableVector<NavCategoryGroup ^>
 
 void ApplicationViewModel::Initialize(ViewMode mode)
 {
-    if (!NavCategory::IsValidViewMode(mode))
+    if (!NavCategory::IsValidViewMode(mode) || !NavCategory::IsViewModeEnabled(mode))
     {
         mode = ViewMode::Standard;
     }

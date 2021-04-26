@@ -718,7 +718,7 @@
     <comment>Screen reader prompt for the Calculator Backspace button</comment>
   </data>
   <data name="BinaryZero.Text" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
     <comment>Screen reader prompt for the Calculator number "0" button</comment>
   </data>
   <data name="BinaryOne.Text" xml:space="preserve">
@@ -870,7 +870,7 @@
     <comment>Screen reader prompt for the equals button on the scientific operator keypad</comment>
   </data>
   <data name="shiftButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Inverse Function</value>
+    <value>Función inversa</value>
     <comment>Screen Reader prompt for the shift button on the number pad in scientific mode.</comment>
   </data>
   <data name="minusButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -910,7 +910,7 @@
     <comment>Screen reader prompt for the Calculator "(" button on the scientific operator keypad</comment>
   </data>
   <data name="Format_OpenParenthesisAutomationNamePrefix" xml:space="preserve">
-    <value>Paréntese de apertura, total de parénteses abertos %1</value>
+    <value>Paréntese de apertura. Total de parénteses abertos: %1</value>
     <comment>{Locked="%1"} Screen reader prompt for the Calculator "(" button on the scientific operator keypad. %1 is the localized count of open parenthesis, e.g. "2".</comment>
   </data>
   <data name="closeParenthesisButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -1370,7 +1370,7 @@
     <comment>An abbreviation for a measurement unit of area</comment>
   </data>
   <data name="UnitAbbreviation_Horsepower" xml:space="preserve">
-    <value>hp (EUA)</value>
+    <value>hp (EUA)</value>
     <comment>An abbreviation for a measurement unit of power</comment>
   </data>
   <data name="UnitAbbreviation_Hour" xml:space="preserve">
@@ -1566,7 +1566,7 @@
     <comment>An abbreviation for a measurement unit of data</comment>
   </data>
   <data name="UnitAbbreviation_Mebibits" xml:space="preserve">
-    <value>mi</value>
+    <value>Mi</value>
     <comment>An abbreviation for a measurement unit of data</comment>
   </data>
   <data name="UnitAbbreviation_Mebibytes" xml:space="preserve">
@@ -1926,7 +1926,7 @@
     <comment>An abbreviation for a measurement unit of Angle</comment>
   </data>
   <data name="UnitAbbreviation_Atmosphere" xml:space="preserve">
-    <value>Caixeiro</value>
+    <value>atm</value>
     <comment>An abbreviation for a measurement unit of Pressure</comment>
   </data>
   <data name="UnitAbbreviation_Bar" xml:space="preserve">
@@ -2317,6 +2317,10 @@
     <value>© %1 Microsoft. Todos os dereitos reservados.</value>
     <comment>{Locked="%1"}. Copyright statement, displayed on the About panel. %1 = the current year (4 digits)</comment>
   </data>
+  <data name="AboutFlyoutContribute" xml:space="preserve">
+    <value>Para obter máis información sobre como podes contribuír á Calculadora de Windows, consulta o proxecto en %HL%GitHub%HL%.</value>
+    <comment>{Locked="%HL%GitHub%HL%"}. GitHub link, Displayed on the About panel</comment>
+  </data>
   <data name="AboutButton.Content" xml:space="preserve">
     <value>Acerca de</value>
     <comment>The text that shows in the dropdown navigation control to open About panel</comment>
@@ -2338,7 +2342,7 @@
     <comment>Screen reader prompt for the negate button on the converter operator keypad</comment>
   </data>
   <data name="CannotPaste" xml:space="preserve">
-    <value>A expresión non se pode pegar</value>
+    <value>Esta expresión non se pode pegar</value>
     <comment>The paste operation cannot be performed, if the expression is invalid.</comment>
   </data>
   <data name="UnitName_Gibibits" xml:space="preserve">
@@ -3248,7 +3252,7 @@
     <comment>Used to describe the last bit of a binary number. Used in bit flip</comment>
   </data>
   <data name="GraphingCalculatorModeText" xml:space="preserve">
-    <value>Representación gráfica</value>
+    <value>Representación nunha calculadora gráfica</value>
     <comment>Name of the Graphing mode of the Calculator app. Displayed in the navigation menu.</comment>
   </data>
   <data name="plotButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -3451,6 +3455,10 @@
     <value>Esta función non admite análises.</value>
     <comment>Error displayed when graph analysis is not supported or had an error.</comment>
   </data>
+  <data name="KGFVariableIsNotX" xml:space="preserve">
+    <value>A análise só se admite nas funcións con formato f(x). Por exemplo: y=x</value>
+    <comment>Error displayed when graph analysis detects the function format is not f(x).</comment>
+  </data>
   <data name="Maxima" xml:space="preserve">
     <value>Máxima</value>
     <comment>Title for KeyGraphFeatures Maxima Property</comment>
@@ -3473,7 +3481,7 @@
   </data>
   <data name="Periodicity" xml:space="preserve">
     <value>Período</value>
-    <comment>Title for KeyGraphFeatures Periodicity Property</comment>
+    <comment>Title for KeyGraphFeatures Periodicity Property. The period of a mathematical function is the smallest interval in its input values such that its output values repeat every such interval.</comment>
   </data>
   <data name="Range" xml:space="preserve">
     <value>Intervalo</value>
@@ -3547,7 +3555,7 @@
     <comment>Error that occurs during graphing when the equation is out of domain.</comment>
   </data>
   <data name="GE_NotSupported" xml:space="preserve">
-    <value>Non admite representar graficamente esta ecuación</value>
+    <value>Non se pode representar esta ecuación nunha calculadora gráfica</value>
     <comment>Error that occurs during graphing when the equation is not supported.</comment>
   </data>
   <data name="ParenthesisMismatch" xml:space="preserve">
@@ -4085,5 +4093,41 @@
   <data name="GraphSettingsGrid.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Opcións da gráfica</value>
     <comment>Screen reader prompt for the graph options panel</comment>
+  </data>
+  <data name="DockPanel_HistoryMemoryLists" xml:space="preserve">
+    <value>Historial e listas de memoria</value>
+    <comment>Automation name for the group of controls for history and memory lists.</comment>
+  </data>
+  <data name="DockPanel_MemoryList" xml:space="preserve">
+    <value>Lista de memoria</value>
+    <comment>Automation name for the group of controls for memory list.</comment>
+  </data>
+  <data name="Format_HistorySlotCleared" xml:space="preserve">
+    <value>Limpouse a rañura de aplicación %1</value>
+    <comment>{Locked='%1'} Formatting string for a Narrator announcement when the user clears a history slot. The %1 is the index of the history slot. For example, users might hear "History slot 2 cleared".</comment>
+  </data>
+  <data name="CalcAlwaysOnTop" xml:space="preserve">
+    <value>Mostrar a calculadora sempre na parte superior</value>
+    <comment>Announcement to indicate calculator window is always shown on top.</comment>
+  </data>
+  <data name="CalcBackToFullView" xml:space="preserve">
+    <value>Cambiar a calculadora á vista completa</value>
+    <comment>Announcement to indicate calculator window is now back to full view.</comment>
+  </data>
+  <data name="arithmeticShiftButtonSelected" xml:space="preserve">
+    <value>Seleccionouse a tecla MAIÚS aritmética</value>
+    <comment>Label for a radio button that toggles arithmetic shift behavior for the shift operations.</comment>
+  </data>
+  <data name="logicalShiftButtonSelected" xml:space="preserve">
+    <value>Seleccionouse a tecla MAIÚS lóxica</value>
+    <comment>Label for a radio button that toggles logical shift behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCircularButtonSelected" xml:space="preserve">
+    <value>Seleccionouse rotar a tecla MAIÚS circular</value>
+    <comment>Label for a radio button that toggles rotate circular behavior for the shift operations.</comment>
+  </data>
+  <data name="rotateCarryShiftButtonSelected" xml:space="preserve">
+    <value>Seleccionouse rotar levando a tecla MAIÚS circular</value>
+    <comment>Label for a radio button that toggles rotate circular with carry behavior for the shift operations.</comment>
   </data>
 </root>

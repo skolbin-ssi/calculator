@@ -405,9 +405,9 @@ void MainPage::OnNavLoaded(_In_ Object ^ sender, _In_ RoutedEventArgs ^ e)
 
 void MainPage::OnNavPaneOpening(_In_ MUXC::NavigationView ^ sender, _In_ Object ^ args)
 {
-    if (!NavFooter)
+    if (!AboutButton)
     {
-        this->FindName(L"NavFooter");
+        this->FindName(L"AboutButton");
     }
 }
 
@@ -432,20 +432,26 @@ void MainPage::OnAboutButtonClick(Object ^ sender, ItemClickEventArgs ^ e)
     ShowAboutPage();
 }
 
+void MainPage::OnAboutButtonKeyDown(Object ^ sender, KeyRoutedEventArgs ^ e)
+{
+    if (e->Key == VirtualKey::Space || e->Key == VirtualKey::Enter)
+    {
+        ShowAboutPage();
+    }
+}
+
 void MainPage::OnAboutFlyoutOpened(_In_ Object ^ sender, _In_ Object ^ e)
 {
     // Keep Ignoring Escape till the About page flyout is opened
     KeyboardShortcutManager::IgnoreEscape(false);
-
-    KeyboardShortcutManager::UpdateDropDownState(this->AboutPageFlyout);
+    KeyboardShortcutManager::HonorShortcuts(false);
 }
 
 void MainPage::OnAboutFlyoutClosed(_In_ Object ^ sender, _In_ Object ^ e)
 {
     // Start Honoring Escape once the About page flyout is closed
     KeyboardShortcutManager::HonorEscape();
-
-    KeyboardShortcutManager::UpdateDropDownState(nullptr);
+    KeyboardShortcutManager::HonorShortcuts(!NavView->IsPaneOpen);
 }
 
 void MainPage::OnNavSelectionChanged(_In_ Object ^ sender, _In_ MUXC::NavigationViewSelectionChangedEventArgs ^ e)
@@ -497,17 +503,7 @@ MUXC::NavigationViewItem ^ MainPage::CreateNavViewItemFromCategory(NavCategory ^
     icon->Glyph = category->Glyph;
     item->Icon = icon;
 
-    if (category->IsPreview)
-    {
-        auto contentPresenter = ref new ContentPresenter();
-        contentPresenter->Content = category->Name;
-        contentPresenter->ContentTemplate = static_cast<DataTemplate ^>(Resources->Lookup(L"NavMenuItemPreviewDataTemplate"));
-        item->Content = contentPresenter;
-    }
-    else
-    {
-        item->Content = category->Name;
-    }
+    item->Content = category->Name;
     item->AccessKey = category->AccessKey;
     item->IsEnabled = category->IsEnabled;
     item->Style = static_cast<Windows::UI::Xaml::Style ^>(Resources->Lookup(L"NavViewItemStyle"));

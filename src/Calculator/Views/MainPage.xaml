@@ -28,6 +28,7 @@
         <Style x:Key="AboutFlyoutPresenterStyle" TargetType="FlyoutPresenter">
             <Setter Property="IsTabStop" Value="False"/>
             <Setter Property="AutomationProperties.AccessibilityView" Value="Raw"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
         </Style>
         <Style x:Key="NavViewItemStyle" TargetType="muxc:NavigationViewItem">
             <Setter Property="KeyTipPlacementMode" Value="Right"/>
@@ -38,13 +39,6 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
         </Style>
-
-        <DataTemplate x:Key="NavMenuItemPreviewDataTemplate" x:DataType="x:String">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Text="{x:Bind}"/>
-                <controls:PreviewTagControl Margin="10,0,0,0" VerticalAlignment="Center"/>
-            </StackPanel>
-        </DataTemplate>
 
         <converters:BooleanToVisibilityNegationConverter x:Key="BooleanToVisibilityNegationConverter"/>
         <converters:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
@@ -128,20 +122,15 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="1"
-                        Margin="8,0,0,0"
-                        Orientation="Horizontal">
-                <TextBlock x:Name="Header"
-                           Margin="0,-3,0,0"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center"
-                           Style="{StaticResource CategoryNameTextBlockStyle}"
-                           Text="{x:Bind Model.CategoryName, Mode=OneWay}"
-                           Visibility="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanToVisibilityNegationConverter}, Mode=OneWay}"/>
-                <controls:PreviewTagControl Margin="10,0,0,0"
-                                            VerticalAlignment="Center"
-                                            Visibility="{x:Bind Model.IsModePreview, Mode=OneWay}"/>
-            </StackPanel>
+            <TextBlock x:Name="Header"
+                       Grid.Column="1"
+                       Margin="8,-3,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource CategoryNameTextBlockStyle}"
+                       Text="{x:Bind Model.CategoryName, Mode=OneWay}"
+                       Visibility="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanToVisibilityNegationConverter}, Mode=OneWay}"/>
+
             <Button x:Name="NormalAlwaysOnTopButton"
                     x:Uid="EnterAlwaysOnTopButton"
                     Grid.Column="2"
@@ -154,6 +143,7 @@
                     AutomationProperties.AutomationId="NormalAlwaysOnTopButton"
                     Click="AlwaysOnTopButtonClick"
                     Content="&#xEE49;"
+                    TabIndex="3"
                     Visibility="{x:Bind Model.DisplayNormalAlwaysOnTopOption, Mode=OneWay}">
                 <Button.KeyboardAccelerators>
                     <KeyboardAccelerator Key="Up" Modifiers="Menu"/>
@@ -168,7 +158,6 @@
                              DataContext="{x:Bind Model}"
                              ExpandedModeThresholdWidth="Infinity"
                              IsBackButtonVisible="Collapsed"
-                             IsEnabled="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanNegationConverter}, Mode=OneWay}"
                              IsPaneToggleButtonVisible="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanNegationConverter}, Mode=OneWay}"
                              IsSettingsVisible="False"
                              ItemInvoked="OnNavItemInvoked"
@@ -181,39 +170,28 @@
                              SelectionChanged="OnNavSelectionChanged"
                              TabIndex="1"
                              UseSystemFocusVisuals="True"
+                             IsEnabled="{x:Bind Model.IsAlwaysOnTop, Converter={StaticResource BooleanNegationConverter}, Mode=OneWay}"
                              x:Load="False">
 
             <muxc:NavigationView.PaneFooter>
-                <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
-                    <muxc:NavigationViewList x:Name="NavFooter"
-                                             Width="{StaticResource SplitViewOpenPaneLength}"
-                                             IsItemClickEnabled="True"
-                                             ItemClick="OnAboutButtonClick"
-                                             x:Load="False">
-                        <muxc:NavigationViewList.ItemContainerTransitions>
-                            <!-- Remove EntranceThemeTransition which is a default transition for NavigationViewList -->
-                            <TransitionCollection/>
-                        </muxc:NavigationViewList.ItemContainerTransitions>
-                        <muxc:NavigationViewList.Items>
-                            <muxc:NavigationViewItem x:Name="AboutButton"
-                                                     x:Uid="AboutButton"
-                                                     Style="{StaticResource NavViewItemStyle}">
-                                <muxc:NavigationViewItem.Icon>
-                                    <FontIcon FontFamily="{StaticResource CalculatorFontFamily}" Glyph="&#xe946;"/>
-                                </muxc:NavigationViewItem.Icon>
-                                <FlyoutBase.AttachedFlyout>
-                                    <Flyout x:Name="AboutPageFlyout"
-                                            x:Uid="AboutPageFlyout"
-                                            Closed="OnAboutFlyoutClosed"
-                                            FlyoutPresenterStyle="{StaticResource AboutFlyoutPresenterStyle}"
-                                            Opened="OnAboutFlyoutOpened">
-                                        <local:AboutFlyout x:Name="AboutPage" x:Load="False"/>
-                                    </Flyout>
-                                </FlyoutBase.AttachedFlyout>
-                            </muxc:NavigationViewItem>
-                        </muxc:NavigationViewList.Items>
-                    </muxc:NavigationViewList>
-                </StackPanel>
+                <muxc:NavigationViewItem x:Name="AboutButton"
+                                         x:Uid="AboutButton"
+                                         Style="{StaticResource NavViewItemStyle}"
+                                         KeyDown="OnAboutButtonKeyDown"
+                                         Tapped="OnAboutButtonClick">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="{StaticResource CalculatorFontFamily}" Glyph="&#xe946;"/>
+                    </muxc:NavigationViewItem.Icon>
+                    <FlyoutBase.AttachedFlyout>
+                        <Flyout x:Name="AboutPageFlyout"
+                                x:Uid="AboutPageFlyout"
+                                Closed="OnAboutFlyoutClosed"
+                                FlyoutPresenterStyle="{StaticResource AboutFlyoutPresenterStyle}"
+                                Opened="OnAboutFlyoutOpened">
+                            <local:AboutFlyout x:Name="AboutPage" x:Load="False"/>
+                        </Flyout>
+                    </FlyoutBase.AttachedFlyout>
+                </muxc:NavigationViewItem>
             </muxc:NavigationView.PaneFooter>
         </muxc:NavigationView>
     </Grid>
